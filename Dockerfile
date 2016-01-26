@@ -2,7 +2,7 @@ FROM node:latest
 
 MAINTAINER Emiliano Jankowski
 
-ENV APPROOT /source
+ENV APPROOT /source-libs
 
 RUN apt-get update && \
     apt-get install -y vim curl git 
