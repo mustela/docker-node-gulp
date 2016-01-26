@@ -2,7 +2,7 @@ FROM node:latest
 
 MAINTAINER Emiliano Jankowski
 
-ENV APPROOT /usr/local/app
+ENV APPROOT /source
 
 RUN apt-get update && \
     apt-get install -y vim curl git 
@@ -15,3 +15,9 @@ WORKDIR $APPROOT
 
 RUN npm install -g bower gulp
 
+ADD config/package.json $APPROOT/package.json
+RUN npm --prefix $APPROOT install
+
+ADD config/.bowerrc $APPROOT/.bowerrc
+ADD config/bower.json $APPROOT/bower.json
+RUN bower --allow-root --config.cwd=$APPROOT --config.interactive=false install
