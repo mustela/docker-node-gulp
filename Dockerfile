@@ -4,6 +4,8 @@ MAINTAINER Emiliano Jankowski
 
 ENV APPROOT /source-libs
 
+RUN mkdir $APPROOT
+
 RUN apt-get update && \
     apt-get install -y vim curl git 
 
