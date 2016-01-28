@@ -2,8 +2,6 @@ FROM node:latest
 
 MAINTAINER Emiliano Jankowski
 
-RUN mkdir $APPROOT
-
 RUN apt-get update && \
     apt-get install -y vim curl git 
 
