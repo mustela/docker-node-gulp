@@ -1,4 +1,4 @@
-FROM node:latest
+FROM node:6.2.2
 
 MAINTAINER Emiliano Jankowski
 
@@ -10,4 +10,3 @@ RUN gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A170311380
     \curl -sSL https://get.rvm.io | bash -s stable --ruby --with-default-gems="sass compass"
 
 RUN npm install -g bower gulp
-
